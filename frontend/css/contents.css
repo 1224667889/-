@@ -1,3 +1,4 @@
+/*上次地震记录*/
 .last-div {
     padding: 0 0.125rem;
     margin-bottom: 0.75rem;
@@ -21,4 +22,88 @@
 }
 #last-one .position {
     float: left;
+}
+/*地区排行*/
+#area-rank .rank-radio {
+    display:inline;
+}
+#area-rank .rank-radio * {
+    padding: unset;
+    margin-left: 5%;
+}
+#area-rank .rank {
+    width: 100%;
+    float: left;
+}
+#area-rank .word-cloud {
+    margin-top: 2%;
+    margin-left: 5%;
+    width: 90%;
+    height: 38%;
+    float: left;
+}
+#area-rank .area-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin-top: 1%;
+    width: 100%;
+    border: none;
+}
+#area-rank .area-table * {
+    text-align: center;
+}
+#area-rank .area-table tr {
+    margin: 2px 0;
+}
+#area-rank .area-table th * {
+    font-weight: normal;
+    font-size: 24px;
+    color: #68d8fe;
+}
+#area-rank .area-table td * {
+    font-size: 18px;
+    color: #61a8ff;
+}
+#area-rank .area-table .always_tr {
+    background: rgba(255, 255, 255, 0.1);
+}
+#area-rank .area-table .on_choose {
+    background: rgba(255, 255, 255, 0.1);
+}
+#area-rank .area-table .table-content {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+#area-rank .area-table #page div {
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+#area-rank .area-table #page .page-index .last-page-div {
+    width: 48%;
+}
+#area-rank .area-table #page .page-index .next-page-div {
+    width: 42%;
+}
+#area-rank .area-table #page .page-index .page-num {
+    width: 10%;
+}
+#area-rank .area-table #page button {
+    color: black;
+}
+#area-rank .area-table #page .now-page-num {
+    color: cornflowerblue;
+    float: left;
+}
+#area-rank .area-table #page .total-page-num {
+    padding: unset;
+    color: gray;
+    float: left;
+}
+#area-rank .word-cloud img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
