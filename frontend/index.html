@@ -4,9 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/main.css" rel="stylesheet" type="text/css">
     <title>Document</title>
+    <style>
+        .view-chart {
+            /* 边框调整位置 */
+            border: 2px;
+            border-color: aqua;
+        }
+        .left-content {
+            /* 左视图 */
+            border: 4px;
+            border-color: brown;
+            top: 6%;
+            left: 0px;
+            height: 100%;
+            width: 20%;
+        }
+        .center-content {
+            /* 中视图 */
+            border: 4px;
+            border-color: green;
+        }
+        .right-content {
+            /* 右视图 */
+            border: 4px;
+            border-color: blue;
+        }
+        #last-one {
+            top: 6%;
+            left: 0px;
+            width: 100%;
+            height: 12%;
+        }
+    </style>
 </head>
 <body>
+    <div class="ground">
+        <!-- 数据大屏的首部 -->
+        <div class="head">
+            <img class="head-img" src="./imgs/head.png">
+        </div>
+
+        <div class="content">
+            <!-- 数据大屏的正文 -->
     
+            <div class="left-content">
+                <!-- 左视图 -->
+                <div class="view-chart" id="last-one">
+                    <!-- 上次地震记录 -->
+    
+                </div>
+                <div class="view-chart" id="area-rank">
+                    <!-- 受灾区域排名 -->
+                    <!-- 包括换页、词云、排名等 -->
+    
+                </div>
+            </div>
+    
+            <div class="center-content">
+                <!-- 中视图 -->
+                <div class="view-chart" id="map-chart">
+                    <!-- 地图数据 -->
+    
+                </div>
+                <div class="view-chart" id="line-chart">
+                    <!-- 折线图 -->
+    
+                </div>
+            </div>
+    
+            <div class="right-content">
+                <!-- 右视图 -->
+                <div class="view-chart" id="scatter-chart">
+                    <!-- 散点图 -->
+    
+                </div>
+                <div class="view-chart" id="range-selection">
+                    <!-- 范围选择 -->
+    
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
