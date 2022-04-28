@@ -1,0 +1,75 @@
+/*各可视化视图的位置*/
+.content {
+    /*内容视图公用*/
+    /*opacity: 10%;*/
+    position: absolute;
+    height: 100%;
+}
+#left-content {
+    /* 左视图 */
+    /*background-color: brown;*/
+    left: 0;
+    width: 25%;
+}
+#middle-content {
+    /* 中视图 */
+    /*background-color: green;*/
+    left: 25%;
+    width: 50%;
+}
+#right-content {
+    /* 右视图 */
+    /*background-color: blue;*/
+    left: 75%;
+    width: 25%;
+}
+.view-chart {
+    /* 边框调整位置 */
+    box-sizing: border-box;
+    border: solid;
+    border-width: 2.125rem 1.583rem 0.875rem 5.5rem;
+    border-image: url(../imgs/border.png) 51 38 21 132;
+    position: absolute;
+}
+#last-one {
+    /*最近一次地震*/
+    top: 5%;
+    height: 10%;
+    left: 2%;
+    width: 97%;
+}
+#area-rank {
+    /*排名*/
+    top: 17%;
+    height: 80%;
+    left: 2%;
+    width: 97%;
+}
+#map-chart {
+    /*地图*/
+    top: 11%;
+    left: 1%;
+    width: 98%;
+    height: 50%;
+}
+#line-chart {
+    /*折线图*/
+    top: 63%;
+    height: 34%;
+    left: 1%;
+    width: 98%;
+}
+#scatter-chart {
+    /*散点图*/
+    top: 5%;
+    left: 1%;
+    width: 97%;
+    height: 56%;
+}
+#range-selection {
+    /*范围选择*/
+    top: 63%;
+    height: 34%;
+    left: 1%;
+    width: 98%;
+}

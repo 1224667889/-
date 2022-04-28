@@ -1,25 +1,33 @@
 .ground {
+    /*背景设置*/
     background-color: #262626;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
 }
 .head {
-    left: 0px;
-    top: 0px;
+    /*标题*/
+    left: 0;
+    top: 0;
+    height: 9%;
     width: 100%;
+    position: absolute;
 }
 .head-img {
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 12%;
+    /*标题图片*/
+    left: 2%;
+    top: 0;
+    width: 96%;
+    height: 100%;
+    position: absolute;
 }
-.centent {
-    left: 0px;
-    top: 0px;
+.main-content {
+    /*内容模块*/
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
+    position: absolute;
 }
