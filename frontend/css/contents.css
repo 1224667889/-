@@ -1,0 +1,24 @@
+.last-div {
+    padding: 0 0.125rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+}
+.last-div * {
+    color: white;
+    font-size: 18px;
+    padding: 0 1.125rem;
+    align-self: center;
+}
+#last-one .level {
+    float: left;
+}
+#last-one .level .number {
+    /*Todo: js实现颜色随等级变化*/
+    color: #ffcc8b;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 0.675rem;
+}
+#last-one .position {
+    float: left;
+}

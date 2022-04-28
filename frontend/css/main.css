@@ -1,3 +1,6 @@
+body * {
+    color: white;
+}
 .ground {
     /*背景设置*/
     background-color: #262626;
@@ -30,4 +33,30 @@
     width: 100%;
     height: 100%;
     position: absolute;
+}
+.view-chart .inner {
+    /*防止边框影响的内部标签*/
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -2.8rem;
+    right: -1.583rem;
+    bottom: -0.875rem;
+    left: -5.5rem;
+}
+.tab {
+    /*标题标签*/
+    padding: 0 0.125rem;
+    margin-bottom: 0.75rem;
+}
+.tab * {
+    /*标题内容*/
+    color: white;
+    font-size: 18px;
+    padding: 0 1.125rem;
+}
+.tab #first {
+    /*第一个后面加一个分割杠*/
+    border-right: 0.083rem solid #00f2f1;
 }

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/main.css" rel="stylesheet" type="text/css">
+    <link href="./css/position.css" rel="stylesheet" type="text/css">
+    <link href="./css/contents.css" rel="stylesheet" type="text/css">
     <title>Document</title>
     <style>
 
@@ -16,7 +18,6 @@
         <div class="head">
             <img class="head-img" src="./imgs/head.png">
         </div>
-
         <div class="main-content">
             <!-- 数据大屏的正文 -->
     
@@ -24,12 +25,25 @@
                 <!-- 左视图 -->
                 <div class="view-chart" id="last-one">
                     <!-- 上次地震记录 -->
-    
+                    <div class="inner">
+                        <div class="tab">
+                            <a id="first">上次地震记录</a>
+                            <a>日期：2022-04-28 15:47:13</a>
+                        </div>
+                        <div class="last-div">
+                            <div class="level">震级：
+                                <b class="number">4.6</b>级
+                            </div>
+                            <div class="position">云南丽江市宁蒗县</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="view-chart" id="area-rank">
                     <!-- 受灾区域排名 -->
                     <!-- 包括换页、词云、排名等 -->
-    
+                    <div class="inner">
+
+                    </div>
                 </div>
             </div>
     
@@ -37,11 +51,15 @@
                 <!-- 中视图 -->
                 <div class="view-chart" id="map-chart">
                     <!-- 地图数据 -->
-    
+                    <div class="inner">
+
+                    </div>
                 </div>
                 <div class="view-chart" id="line-chart">
                     <!-- 折线图 -->
-    
+                    <div class="inner">
+
+                    </div>
                 </div>
             </div>
     
@@ -49,11 +67,15 @@
                 <!-- 右视图 -->
                 <div class="view-chart" id="scatter-chart">
                     <!-- 散点图 -->
-    
+                    <div class="inner">
+
+                    </div>
                 </div>
                 <div class="view-chart" id="range-selection">
                     <!-- 范围选择 -->
-    
+                    <div class="inner">
+
+                    </div>
                 </div>
                 
             </div>
