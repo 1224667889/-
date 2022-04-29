@@ -107,3 +107,34 @@
     width: 100%;
     height: 100%;
 }
+
+/*数据范围选择*/
+#range-selection .now-choose {
+    display: -webkit-inline-box;
+    padding: 0 0.125rem;
+}
+#range-selection .now-choose > * {
+    display:inline-block;
+    text-align: center;
+    float: left;
+}
+#range-selection .now-choose .choose-area {
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 65%;
+}
+#range-selection .now-choose .del {
+    padding: unset;
+    margin-left: 2px;
+    width: 22px;
+    background-color: unset;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+#range-selection .now-choose .del * {
+    color: white;   /*js实现移动过来变brown*/
+    padding: unset;
+}
