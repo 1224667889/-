@@ -7,6 +7,9 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <link href="./css/position.css" rel="stylesheet" type="text/css">
     <link href="./css/contents.css" rel="stylesheet" type="text/css">
+    <script src="./js/drag-arc.min.js"></script>
+    <script src="./js/year-circle.js"></script>
+
     <title>Document</title>
     <style>
 
@@ -46,7 +49,7 @@
                             <a class="first">地震受灾区域</a>
                             <div class="rank-radio">
                                 <label>
-                                    <input type="radio" name="rank-radio" value="num">
+                                    <input type="radio" name="rank-radio" value="num" checked="checked">
                                 </label>按频率
                                 <label>
                                     <input type="radio" name="rank-radio" value="size">
@@ -187,11 +190,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-
+                        <div class="half-circle">
+                            <div class="bar" id="content"></div>
                         </div>
-                        <div class="choose-rank">
-
+                        <div class="choose-level">
+                            <div class="level-radio">
+                                <label>
+                                    <input type="radio" name="level-radio" value="all" checked="checked">
+                                </label>显示所有
+                                <label>
+                                    <input type="radio" name="level-radio" value="3.0">
+                                </label>仅3.0级以上
+                                <label>
+                                    <input type="radio" name="level-radio" value="6.0">
+                                </label>仅6.0级以上
+                            </div>
                         </div>
                     </div>
                 </div>

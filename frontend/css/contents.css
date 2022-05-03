@@ -138,3 +138,25 @@
     color: white;   /*js实现移动过来变brown*/
     padding: unset;
 }
+#range-selection .half-circle {
+    width: 100%;
+    height: 75%;
+}
+#range-selection .choose-level {
+    width: 100%;
+    height: 20%;
+}
+#range-selection .level-radio {
+    display:inline;
+}
+#range-selection .level-radio * {
+    font-size: 26px;
+    padding: unset;
+    margin-left: 4%;
+    margin-top: 3%;
+}
+#range-selection .bar {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
