@@ -7,9 +7,9 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <link href="./css/position.css" rel="stylesheet" type="text/css">
     <link href="./css/contents.css" rel="stylesheet" type="text/css">
-    <script src="./js/drag-arc.min.js"></script>
-    <script src="./js/year-circle.js"></script>
-
+    <script type="text/javascript" src="./js/drag-arc.min.js"></script>
+    <script type="text/javascript" src="./js/year-circle.js"></script>
+    <script type="text/javascript" src="./js/echarts.min.js"></script>
     <title>Document</title>
     <style>
 
@@ -128,7 +128,7 @@
                                     <td>
                                         <div class="page-index">
                                             <div class="last-page-div">
-                                                <button class="page-button" id="last-page">上一页</button>
+                                                <button class="page-button" id="last-page" onclick="alert(year);">上一页</button>
                                             </div>
                                             <div class="page-num">
                                                 <a class="now-page-num">&#09 2</a>
@@ -154,13 +154,18 @@
                 <div class="view-chart" id="map-chart">
                     <!-- 地图数据 -->
                     <div class="inner">
+                        <div id="map-chart-container">
 
+                        </div>
                     </div>
                 </div>
                 <div class="view-chart" id="line-chart">
                     <!-- 折线图 -->
                     <div class="inner">
-
+                        <div class="line-chart-title">地震发生频率变化折线图</div>
+                        <div id="line-chart-container">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -172,6 +177,9 @@
                     <div class="inner">
                         <div class="tab">
                             <a class="first">震源震级关联图</a>
+                        </div>
+                        <div id="scatter-chart-container">
+                            
                         </div>
                     </div>
                 </div>
@@ -212,5 +220,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="./js/line-chart.js"></script>
+    <script type="text/javascript" src="./js/scatter-chart.js"></script>
 </body>
 </html>

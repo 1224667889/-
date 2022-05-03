@@ -160,3 +160,21 @@
     margin: 0 auto;
     width: 50%;
 }
+
+/* 折线图 */
+#line-chart .line-chart-title {
+    color: white;
+    text-align: center;
+    padding: 0 2%;
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+#line-chart #line-chart-container {
+    top: 2%;
+    height: 90%;
+}
+
+/* 散点图 */
+#scatter-chart #scatter-chart-container {
+    height: 100%;
+}
