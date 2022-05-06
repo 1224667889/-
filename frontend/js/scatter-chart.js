@@ -7,39 +7,86 @@ var app = {};
 
 var option;
 
+// See https://github.com/ecomfe/echarts-stat
+echarts.registerTransform(ecStat.transform.regression);
+const data = [
+  [96.24, 11.35],
+  [33.09, 85.11],
+  [57.6, 36.61],
+  [36.77, 27.26],
+  [20.1, 6.72],
+  [45.53, 36.37],
+  [110.07, 80.13],
+  [72.05, 20.88],
+  [39.82, 37.15],
+  [48.05, 70.5],
+  [0.85, 2.57],
+  [51.66, 63.7],
+  [61.07, 127.13],
+  [64.54, 33.59],
+  [35.5, 25.01],
+  [226.55, 664.02],
+  [188.6, 175.31],
+  [81.31, 108.68]
+];
 option = {
-xAxis: {},
-yAxis: {},
-series: [
-{
-  symbolSize: 20,
-  data: [
-    [10.0, 8.04],
-    [8.07, 6.95],
-    [13.0, 7.58],
-    [9.05, 8.81],
-    [11.0, 8.33],
-    [14.0, 7.66],
-    [13.4, 6.81],
-    [10.0, 6.33],
-    [14.0, 8.96],
-    [12.5, 6.82],
-    [9.15, 7.2],
-    [11.5, 7.2],
-    [3.03, 4.23],
-    [12.2, 7.83],
-    [2.02, 4.47],
-    [1.05, 3.33],
-    [4.05, 4.96],
-    [6.03, 7.24],
-    [12.0, 6.26],
-    [12.0, 8.84],
-    [7.08, 5.82],
-    [5.02, 5.68]
+  dataset: [
+    {
+      source: data
+    },
+    {
+      transform: {
+        type: 'ecStat:regression',
+        config: { method: 'polynomial', order: 3 }
+      }
+    }
   ],
-  type: 'scatter'
-}
-]
+  title: {
+    //text: '18 companies net profit and main business income (million)',
+    //subtext: 'By ecStat.regression',
+    sublink: 'https://github.com/ecomfe/echarts-stat',
+    left: 'center',
+    top: 16
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  xAxis: {
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    },
+    splitNumber: 8
+  },
+  yAxis: {
+    min: -40,
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    }
+  },
+  series: [
+    {
+      name: 'scatter',
+      type: 'scatter'
+    },
+    {
+      name: 'line',
+      type: 'line',
+      smooth: true,
+      datasetIndex: 1,
+      symbolSize: 0.1,
+      symbol: 'circle',
+      label: { show: false, fontSize: 16 },//多项式表达式
+      labelLayout: { dx: -20 },
+      encode: { label: 2, tooltip: 1 }
+    }
+  ]
 };
 
 if (option && typeof option === 'object') {
