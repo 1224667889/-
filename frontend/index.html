@@ -7,11 +7,10 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <link href="./css/position.css" rel="stylesheet" type="text/css">
     <link href="./css/contents.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="./js/drag-arc.min.js"></script>
-    <script type="text/javascript" src="./js/year-circle.js"></script>
-    <script type="text/javascript" src="./js/echarts.min.js"></script>
-    <script type="text/javascript" src="./js/ecStat.min.js"></script>
-    <script type="text/javascript" src="./js/china.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/echart/echarts.min.js"></script>
+    <script type="text/javascript" src="js/echart/ecStat.min.js"></script>
+    <script type="text/javascript" src="js/echart/map/china.js"></script>
     <title>Document</title>
     <style>
 
@@ -206,13 +205,13 @@
                         <div class="choose-level">
                             <div class="level-radio">
                                 <label>
-                                    <input type="radio" name="level-radio" value="all" checked="checked">
+                                    <input type="radio" name="level-radio" value="0.0" checked="checked" onchange="update_rank()">
                                 </label>显示所有
                                 <label>
-                                    <input type="radio" name="level-radio" value="3.0">
+                                    <input type="radio" name="level-radio" value="3.0" onchange="update_rank()">
                                 </label>仅3.0级以上
                                 <label>
-                                    <input type="radio" name="level-radio" value="6.0">
+                                    <input type="radio" name="level-radio" value="6.0" onchange="update_rank()">
                                 </label>仅6.0级以上
                             </div>
                         </div>
@@ -222,8 +221,12 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="./js/line-chart.js"></script>
-    <script type="text/javascript" src="./js/scatter-chart.js"></script>
-    <script type="text/javascript" src="./js/map-chart.js"></script>
+    <script type="text/javascript" src="js/data/drag-arc.min.js"></script>
+    <script type="text/javascript" src="js/data/year-circle.js"></script>
+    <script type="text/javascript" src="js/data/level-radio.js"></script>
+
+    <script type="text/javascript" src="js/charts/line-chart.js"></script>
+    <script type="text/javascript" src="js/charts/scatter-chart.js"></script>
+    <script type="text/javascript" src="js/charts/map-chart.js"></script>
 </body>
 </html>
