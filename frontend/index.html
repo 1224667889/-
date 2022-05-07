@@ -50,10 +50,10 @@
                             <a class="first">地震受灾区域</a>
                             <div class="rank-radio">
                                 <label>
-                                    <input type="radio" name="rank-radio" value="num" checked="checked">
+                                    <input type="radio" name="rank-radio" value="num" checked="checked" onchange="UpdateRankPageData(year, rank, country, 1)">
                                 </label>按频率
                                 <label>
-                                    <input type="radio" name="rank-radio" value="size">
+                                    <input type="radio" name="rank-radio" value="size" onchange="UpdateRankPageData(year, rank, country, 1)">
                                 </label>按等级
                             </div>
                         </div>
@@ -62,74 +62,74 @@
                                 <tr class="always_tr">
                                     <th>
                                         <div class="table-content">地区名称</div>
-                                        <div class="table-content">地震次数</div>
+                                        <div class="table-content" id="rank-title">地震次数</div>
                                     </th>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">1次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">2次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">3次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">4次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="on_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">5次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">6次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">7次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">8次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">9次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="off_choose">
                                     <td>
-                                        <div class="table-content">福建省</div>
-                                        <div class="table-content">10次</div>
+                                        <div class="table-content" name="area"></div>
+                                        <div class="table-content" name="num"></div>
                                     </td>
                                 </tr>
                                 <tr class="always_tr" id="page">
                                     <td>
                                         <div class="page-index">
                                             <div class="last-page-div">
-                                                <button class="page-button" id="last-page" onclick="alert(year);">上一页</button>
+                                                <button class="page-button" id="last-page">上一页</button>
                                             </div>
                                             <div class="page-num">
                                                 <a class="now-page-num">&#09 2</a>
@@ -227,6 +227,7 @@
     <script type="text/javascript" src="js/data/area-data.js"></script>
 
     <script type="text/javascript" src="js/charts/last-data.js"></script>
+    <script type="text/javascript" src="js/charts/rank-page-data.js"></script>
     <script type="text/javascript" src="js/charts/line-chart.js"></script>
     <script type="text/javascript" src="js/charts/scatter-chart.js"></script>
     <script type="text/javascript" src="js/charts/map-chart.js"></script>

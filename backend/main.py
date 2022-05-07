@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import and_
+from sqlalchemy import and_, func, desc
 import pymysql
 from datetime import datetime
 import json
@@ -75,26 +75,20 @@ def get_data():
     rank = request.args.get('rank', type=float, default=0.)
     country = request.args.get('country', type=str, default="")
 
-    page_size = request.args.get('page_size', type=int, default=10)
-
     digits = get_digits(year, rank, country)
     digits = digits.all()
-    page_sum = len(digits) // page_size
-    if len(digits) % page_size:
-        page_sum += 1
     return json.dumps({
         "code": 200,
         "msg": "SUCCESS",
         "data": {
             "digits": [digit.to_json() for digit in digits],
-            "page_sum": page_sum,
             "sum": len(digits)
         }
     })
 
 
-@app.route('/api/page', methods=['GET'])
-def get_page():
+@app.route('/api/page/<page_type>', methods=['GET'])
+def get_page(page_type: str):
     year = request.args.get('year', type=int, default=2013)
     rank = request.args.get('rank', type=float, default=0.)
     country = request.args.get('country', type=str, default="")
@@ -103,14 +97,37 @@ def get_page():
     page_size = request.args.get('page_size', type=int, default=10)
 
     digits = get_digits(year, rank, country)
-    digits = digits.offset(page_size * (page_num - 1)).limit(page_size)
-    digits = digits.all()
+    if country:
+        if page_type == 'size':
+            digits = digits.with_entities(
+                Digit.province.label('area'),
+                func.max(Digit.rank).label('num')
+            ).group_by(Digit.province).order_by(desc('num'))
+        else:
+            digits = digits.with_entities(
+                Digit.province.label('area'),
+                func.count('*').label('num')
+            ).group_by(Digit.province).order_by(desc('num'))
+    else:
+        if page_type == 'size':
+            digits = digits.with_entities(
+                Digit.country.label('area'),
+                func.max(Digit.rank).label('num')
+            ).group_by(Digit.country).order_by(desc('num'))
+        else:
+            digits = digits.with_entities(
+                Digit.country.label('area'),
+                func.count('*').label('num')
+            ).group_by(Digit.country).order_by(desc('num'))
+
+    digits_query = digits.paginate(page_num, page_size)
     return json.dumps({
         "code": 200,
         "msg": "SUCCESS",
         "data": {
-            "digits": [digit.to_json() for digit in digits],
-            "sum": len(digits)
+            "digits": [{"area": digit[0], "num": digit[1]} for digit in digits_query.items],
+            "total": digits_query.total,
+            "page_sum": digits_query.pages
         }
     })
 
