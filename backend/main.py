@@ -4,10 +4,13 @@ from sqlalchemy import and_
 import pymysql
 from datetime import datetime
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://%s:%s@%s/%s' % ('root', 'aaaaaa', 'localhost:3306', 'visiable_base')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(app, supports_credentials=True)
+pymysql.install_as_MySQLdb()
 db = SQLAlchemy(app)
 
 
@@ -47,6 +50,23 @@ def get_digits(year: int, rank: float, country: str = ""):
     if country:
         digits = digits.filter_by(country=country)
     return digits
+
+
+@app.route('/api/last', methods=['GET'])
+def get_last():
+    year = request.args.get('year', type=int, default=2013)
+    rank = request.args.get('rank', type=float, default=0.)
+    country = request.args.get('country', type=str, default="")
+
+    digits = get_digits(year, rank, country)
+    last = digits.order_by(Digit.time.desc()).first()
+    return json.dumps({
+        "code": 200,
+        "msg": "SUCCESS",
+        "data": {
+            "last": last.to_json()
+        }
+    })
 
 
 @app.route('/api/all', methods=['GET'])

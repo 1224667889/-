@@ -32,13 +32,13 @@
                     <div class="inner">
                         <div class="tab">
                             <a class="first">上次地震记录</a>
-                            <a>日期：2022-04-28 15:47:13</a>
+                            <a id="last-one-date">日期：</a>
                         </div>
                         <div class="last-div">
                             <div class="level">震级：
-                                <b class="number">4.6</b>级
+                                <b class="number" id="last-one-rank"></b>级
                             </div>
-                            <div class="position">云南丽江市宁蒗县</div>
+                            <div class="position" id="last-one-site"></div>
                         </div>
                     </div>
                 </div>
@@ -223,8 +223,10 @@
     </div>
     <script type="text/javascript" src="js/data/drag-arc.min.js"></script>
     <script type="text/javascript" src="js/data/year-circle.js"></script>
-    <script type="text/javascript" src="js/data/level-radio.js"></script>
+    <script type="text/javascript" src="js/data/rank-data.js"></script>
+    <script type="text/javascript" src="js/data/area-data.js"></script>
 
+    <script type="text/javascript" src="js/charts/last-data.js"></script>
     <script type="text/javascript" src="js/charts/line-chart.js"></script>
     <script type="text/javascript" src="js/charts/scatter-chart.js"></script>
     <script type="text/javascript" src="js/charts/map-chart.js"></script>
