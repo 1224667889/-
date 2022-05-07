@@ -1,4 +1,5 @@
 var year = 2013
+
 class DragAcr {
   constructor(param) {
     this.initParam(param)
@@ -293,7 +294,7 @@ function main(){
   })
 }
 
-window.onload=function(){
+window.onload = function(){
   main()
 }
 
