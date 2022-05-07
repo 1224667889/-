@@ -178,3 +178,10 @@
 #scatter-chart #scatter-chart-container {
     height: 100%;
 }
+
+/* 地图 */
+#map-chart #map-chart-container {
+    height: 100%;
+    width: 96%;
+    padding-left: 2%;
+}
