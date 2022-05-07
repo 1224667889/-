@@ -50,10 +50,10 @@
                             <a class="first">地震受灾区域</a>
                             <div class="rank-radio">
                                 <label>
-                                    <input type="radio" name="rank-radio" value="num" checked="checked" onchange="UpdateRankPageData(year, rank, country, 1)">
+                                    <input type="radio" class="rank-radio" name="rank-radio" value="num" checked="checked">
                                 </label>按频率
                                 <label>
-                                    <input type="radio" name="rank-radio" value="size" onchange="UpdateRankPageData(year, rank, country, 1)">
+                                    <input type="radio" class="rank-radio" name="rank-radio" value="size">
                                 </label>按等级
                             </div>
                         </div>
@@ -205,13 +205,13 @@
                         <div class="choose-level">
                             <div class="level-radio">
                                 <label>
-                                    <input type="radio" name="level-radio" value="0.0" checked="checked" onchange="update_rank()">
+                                    <input type="radio" class="level-radio" name="level-radio" value="0.0" checked="checked">
                                 </label>显示所有
                                 <label>
-                                    <input type="radio" name="level-radio" value="3.0" onchange="update_rank()">
+                                    <input type="radio" class="level-radio" name="level-radio" value="3.0">
                                 </label>仅3.0级以上
                                 <label>
-                                    <input type="radio" name="level-radio" value="6.0" onchange="update_rank()">
+                                    <input type="radio" class="level-radio" name="level-radio" value="6.0">
                                 </label>仅6.0级以上
                             </div>
                         </div>
@@ -225,6 +225,7 @@
     <script type="text/javascript" src="js/data/year-circle.js"></script>
     <script type="text/javascript" src="js/data/rank-data.js"></script>
     <script type="text/javascript" src="js/data/area-data.js"></script>
+    <script type="text/javascript" src="js/data/auto-update.js"></script>
 
     <script type="text/javascript" src="js/charts/last-data.js"></script>
     <script type="text/javascript" src="js/charts/rank-page-data.js"></script>

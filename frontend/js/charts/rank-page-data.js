@@ -1,6 +1,7 @@
 var now_page = 1;
 var max_page = 9999;
 function UpdateRankPageData(year=2013, rank=0.0, country="", page_num=1) {
+    now_page = page_num;
     let obj = document.getElementsByName("rank-radio");
     var t = "num"
     for(let i=0; i<obj.length; i ++){
@@ -72,5 +73,10 @@ $(document).ready(function(){
         }
         $('.now-page-num').text(now_page);
         UpdateRankPageData(year, rank, country, now_page);
-    })
+    });
+    $(".rank-radio").change(function (){
+        now_page = 1;
+        $('.now-page-num').text(now_page);
+        UpdateRankPageData(year, rank, country, now_page);
+    });
 });
