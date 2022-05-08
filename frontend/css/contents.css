@@ -31,6 +31,17 @@
     padding: unset;
     margin-left: 5%;
 }
+#area-rank .rank-radio:hover * {
+    padding: unset;
+    margin-left: 5%;
+}
+#area-rank .rank-radio {
+    color: white;
+    transition: color 0.2s;
+}
+#area-rank .rank-radio:hover {
+    color: #68d8fe;
+}
 #area-rank .rank {
     width: 100%;
     float: left;
@@ -113,6 +124,13 @@
     display: -webkit-inline-box;
     padding: 0 0.125rem;
 }
+#range-selection .now-choose * {
+    color: white;
+    transition: color 0.2s;
+}
+#range-selection .now-choose:hover * {
+    color: #68d8fe;
+}
 #range-selection .now-choose > * {
     display:inline-block;
     text-align: center;
@@ -121,7 +139,7 @@
 #range-selection .now-choose .choose-area {
     border: 1px solid white;
     border-radius: 5px;
-    width: 65%;
+    /*width: 65%;*/
 }
 #range-selection .now-choose .del {
     padding: unset;
@@ -135,8 +153,12 @@
     cursor: pointer;
 }
 #range-selection .now-choose .del * {
-    color: white;   /*js实现移动过来变brown*/
+    color: white;
+    transition: color 0.2s;
     padding: unset;
+}
+#range-selection .now-choose .del:hover * {
+    color: #61a8ff;
 }
 #range-selection .half-circle {
     width: 100%;
@@ -148,6 +170,11 @@
 }
 #range-selection .level-radio {
     display:inline;
+    color: white;
+    transition: color 0.2s;
+}
+#range-selection .level-radio:hover {
+    color: #68d8fe;
 }
 #range-selection .level-radio * {
     font-size: 26px;
@@ -184,4 +211,17 @@
     height: 100%;
     width: 96%;
     padding-left: 2%;
+}
+#map-chart .map-del * {
+    cursor: pointer;
+    padding-left: 2%;
+    padding-top: 1%;
+    color: white;
+    transition: color 0.2s;
+}
+#map-chart .map-del:hover * {
+    cursor: pointer;
+    padding-left: 2%;
+    padding-top: 1%;
+    color: #61a8ff;
 }

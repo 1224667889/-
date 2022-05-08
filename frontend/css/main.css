@@ -61,3 +61,9 @@ body * {
     /*第一个后面加一个分割杠*/
     border-right: 0.083rem solid #00f2f1;
 }
+input {
+    cursor: pointer;
+}
+button {
+    cursor: pointer;
+}
