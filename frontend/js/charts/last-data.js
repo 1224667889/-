@@ -7,7 +7,7 @@ function UpdateLastData(year=2013, rank=0.0, country="") {
             $('#last-one-date').text('日期：' + data.data.last.time);
             $('#last-one-rank').text(data.data.last.rank);
             site = data.data.last.site;
-            console.log(site.length)
+            // console.log(site.length)
             if (site.length >= 20) {
                 site = site.substring(0, 14) + "..."
             }

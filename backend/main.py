@@ -38,6 +38,18 @@ class Digit(db.Model):
             "province": self.province,
         }
 
+    def to_map(self):
+        return {
+            "name": self.site,
+            "depth": self.depth,
+            "value": [
+                self.longtitude,
+                self.latitude,
+                self.rank,
+                int(self.time.strftime("%j"))
+            ]
+        }
+
 
 def get_digits(year: int, rank: float, country: str = ""):
     digits = Digit.query.filter(
@@ -82,6 +94,24 @@ def get_data():
         "msg": "SUCCESS",
         "data": {
             "digits": [digit.to_json() for digit in digits],
+            "sum": len(digits)
+        }
+    })
+
+
+@app.route('/api/map', methods=['GET'])
+def get_map():
+    year = request.args.get('year', type=int, default=2013)
+    rank = request.args.get('rank', type=float, default=0.)
+    country = request.args.get('country', type=str, default="")
+
+    digits = get_digits(year, rank, country)
+    digits = digits.all()
+    return json.dumps({
+        "code": 200,
+        "msg": "SUCCESS",
+        "data": {
+            "digits": [digit.to_map() for digit in digits],
             "sum": len(digits)
         }
     })

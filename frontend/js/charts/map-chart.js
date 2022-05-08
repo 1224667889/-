@@ -1,50 +1,88 @@
-var mapChart = echarts.init(document.getElementById('map-chart-container'));
-var equipData = [
+function UpdateMapData(year=2013, rank=0.0, country="") {
+  $.ajax({
+    url:'http://127.0.0.1:5000/api/map?year='+year+'&rank='+rank+'&country='+country,
+    type:'get',
+    dataType:'json',
+    success: function(data){
+      var equipData = data.data.digits;
+      var mapChart = echarts.init(document.getElementById('map-chart-container'));
 
-  {name: '海门', value: [121.15, 31.89, 3]},
-  {name: '鄂尔多斯', value: [109.781327, 39.608266, 6]},
-  {name: '招远', value: [120.38, 37.35, 9]},
-  {name: '舟山', value: [122.207216, 29.985295, 1]},
-]
-// mapChart的配置
-var option = {
-  geo: {
-    map: 'china',
-
-    itemStyle: {
-      normal: {					// 普通状态下的样式
-        areaColor: '#404a59',
-        borderColor: '#111'
-      },
-      emphasis: {					// 高亮状态下的样式
-        areaColor: '#2a333d'
-      }
-    }
-  },
-  // backgroundColor: '#404a59',  		// 背景
-
-  // 设置散点
-  series: [
-    {
-      name: '地震', // series名称
-      type: 'scatter', // series图表类型
-      coordinateSystem: 'geo', // series坐标系类型
-      data: equipData
-    }
-  ],
-  visualMap: {
-    type: 'continuous', // 连续型
-    min: 0,       		// 值域最小值，必须参数
-    max: 10,			// 值域最大值，必须参数
-    calculable: false,	// 是否启用值域漫游
-    inRange: {
-      symbolSize: [5, 30],
-      color: ['#FF3333','#CC0033','#990033']
-      // 指定数值从低到高时的颜色变化
+      // mapChart的配置
+      var option = {
+        geo: {
+          map: 'china',
+          itemStyle: {
+            normal: {					// 普通状态下的样式
+              areaColor: '#323c48',
+              borderColor: '#111'
+            },
+            emphasis: {					// 高亮状态下的样式
+              areaColor: '#2a333d'
+            },
+          }
+        },
+        // backgroundColor: '#404a59',  		// 背景
+        tooltip: {
+          trigger:'item',
+          formatter:(params) => {
+            return `地点:${params.name}</br>经度:${params.value[0]}</br>纬度:${params.value[1]}</br>震级:${params.value[2]}`
+          }
+        },
+        // 设置散点
+        series: [
+          {
+            name: '地震', // series名称
+            type: 'effectScatter', // series图表类型
+            coordinateSystem: 'geo', // series坐标系类型
+            itemStyle: {
+              color: 'rgba(255,0,0,0.3)'
+            },
+            rippleEffect:{
+              scale : 5 //控制涟漪大小
+            },
+            emphasis: {
+              focus: 'self',
+            },
+            showEffectOn :  'emphasis', // 鼠标移动到点上才有涟漪效果
+            data: equipData
+          }
+        ],
+        visualMap: [
+          {
+            type: 'continuous',
+            min: 1,
+            max: 366,
+            calculable: false,
+            dimension: 3,
+            show: false,
+            inRange: {
+              opacity: [0.3, 1]
+            }
+          },
+          {
+            type: 'continuous',
+            min: 0,
+            max: 10,
+            calculable: false,
+            dimension: 2,
+            inRange: {
+              symbolSize: [1, 40],
+              color: ['#CC0033','#770022'],
+            },
+            textStyle: {
+              color: '#fff'
+            }
+          },
+        ]
+      };
+      mapChart.setOption(option);
     },
-    textStyle: {
-      color: '#fff'	// 值域控件的文本颜色
+    error:function(){
+      console.log('请求出错！');
     }
-  },
-};
-mapChart.setOption(option);
+  });
+}
+
+$(document).ready(function(){
+  UpdateMapData(year, rank, country);
+});

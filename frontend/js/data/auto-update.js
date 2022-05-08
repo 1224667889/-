@@ -8,6 +8,8 @@ function UpdateAllData() {
     // 更新排名数据
     now_page = 1;
     UpdateRankPageData(year, rank, country, now_page);
+    // 更新地图数据
+    UpdateMapData(year, rank, country);
     // Todo: 更多数据
 }
 

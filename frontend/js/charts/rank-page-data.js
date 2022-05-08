@@ -43,7 +43,7 @@ function UpdateRankPageData(year=2013, rank=0.0, country="", page_num=1) {
                     trList[i].getElementsByTagName("DIV")[1].innerHTML="&nbsp";
                 }
             }
-            console.log(data)
+            // console.log(data)
         },
         error:function(){
             console.log('请求出错！');
