@@ -1,5 +1,17 @@
 var now_page = 1;
 var max_page = 9999;
+
+$(function(){
+    //鼠标滑动，行色变化
+    $('tr:gt(0):lt(10)').mouseover(function(){
+        $(this).addClass('on_choose');
+        $(this).removeClass('off_choose');
+    }).mouseout(function(){
+        $(this).removeClass('on_choose');
+        $(this).addClass('off_choose');
+    });
+});
+
 function UpdateRankPageData(year=2013, rank=0.0, country="", page_num=1) {
     now_page = page_num;
     let obj = document.getElementsByName("rank-radio");
