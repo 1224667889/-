@@ -10,10 +10,8 @@ function update_rank() {
     }
 }
 $(document).ready(function(){
-    $(".level-radio").change(function(){
-        console.log(11111);
+    $(".level-radio").children('label').click(function(){
         update_rank();
-        console.log(22222);
         // 触发全部刷新
         UpdateAllData();
     });

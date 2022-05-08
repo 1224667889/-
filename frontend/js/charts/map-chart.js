@@ -66,7 +66,7 @@ var tooltip = {
 
 function switchMap(param){
   var area;
-  if (param.data.country !== "") {
+  if (param.data != null) {
     area = param.data.country;
   } else {
     area = param.name;

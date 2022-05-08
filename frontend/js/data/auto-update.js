@@ -10,6 +10,8 @@ function UpdateAllData() {
     UpdateRankPageData(year, rank, country, now_page);
     // 更新地图数据
     UpdateMapData(year, rank, country);
+    // 更新词云数据
+    UpdateWordCloud(year, rank, country);
     // Todo: 更多数据
 }
 

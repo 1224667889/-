@@ -63,7 +63,7 @@ function UpdateRankPageData(year=2013, rank=0.0, country="", page_num=1) {
     });
 }
 $(document).ready(function(){
-    $("#area-rank").ready(UpdateRankPageData(year, rank, country, now_page));
+    UpdateRankPageData(year, rank, country, now_page);
     $("#last-page").click(function () {
         now_page--;
         if (now_page < 1) {
@@ -86,9 +86,10 @@ $(document).ready(function(){
         $('.now-page-num').text(now_page);
         UpdateRankPageData(year, rank, country, now_page);
     });
-    $(".rank-radio").change(function (){
+    $(".rank-radio").children('label').click(function (){
         now_page = 1;
         $('.now-page-num').text(now_page);
         UpdateRankPageData(year, rank, country, now_page);
+        UpdateWordCloud(year, rank, country);
     });
 });
