@@ -203,6 +203,12 @@
 
 /* 散点图 */
 #scatter-chart #scatter-chart-container {
+    /*display: none;*/
+    height: 100%;
+}
+/* 饼图 */
+#scatter-chart #pie-chart-container {
+    /*display: none;*/
     height: 100%;
 }
 

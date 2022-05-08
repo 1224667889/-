@@ -58,17 +58,17 @@ const data =
       type: 'scatter',
       symbolSize: 5,
     },
-    // {
-    //   name: 'line',
-    //   type: 'line',
-    //   smooth: true,
-    //   datasetIndex: 1,
-    //   symbolSize: 0.1,
-    //   symbol: 'circle',
-    //   label: { show: false, fontSize: 16 },//多项式表达式
-    //   labelLayout: { dx: -20 },
-    //   encode: { label: 2, tooltip: 1 }
-    // }
+    {
+      name: 'line',
+      type: 'line',
+      smooth: true,
+      datasetIndex: 1,
+      symbolSize: 0.1,
+      symbol: 'circle',
+      label: { show: false, fontSize: 16 },//多项式表达式
+      labelLayout: { dx: -20 },
+      encode: { label: 2, tooltip: 1 }
+    }
   ]
 };
 
@@ -77,3 +77,7 @@ if (option && typeof option === 'object') {
 }
 
 window.addEventListener('resize', myChart.resize);
+
+$(document).ready(function(){
+  $('#scatter-chart-container').css('display', 'unset');
+});
