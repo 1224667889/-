@@ -1,4 +1,5 @@
-var dom = document.getElementById('pie-chart-container');
+function UpdatePieChart() {
+  var dom = document.getElementById('pie-chart-container');
 var myChart = echarts.init(dom, null, {
       renderer: 'canvas',
       useDirtyRect: false
@@ -75,9 +76,9 @@ option = {
 if (option && typeof option === 'object') {
   myChart.setOption(option);
 }
+}
 
-    //window.addEventListener('resize', myChart.resize);
 
 $(document).ready(function(){
-  // $('#pie-chart-container').css('display', );
+  UpdatePieChart();
 });
