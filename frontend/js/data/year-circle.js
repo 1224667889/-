@@ -1,4 +1,4 @@
-var year = 2013
+var year = 2013;
 
 class DragAcr {
   constructor(param) {
@@ -20,7 +20,7 @@ class DragAcr {
       sliderColor = "#fff",
       sliderBorderColor = "#33aaff",
       value = 0,
-      change = (v)=> { console.log(2013 + parseInt((v - 1) / 10)) },
+      change = (v)=> {},
       textShow = true
     } = param;
 
@@ -116,7 +116,8 @@ class DragAcr {
     this.ctx.fillStyle = themeColor;
     this.ctx.textAlign = "center"
     this.ctx.textBaseline = "bottom";
-    this.ctx.fillText(2013 + parseInt((this.value - 1) / 10), this.center, this.center);
+    year = 2013 + parseInt((this.value - 1) / 10);
+    this.ctx.fillText(year, this.center, this.center);
 
   }
   //将值转化为弧度
@@ -288,8 +289,7 @@ function main(){
     outColor: '#eee',
     counterclockwise: true,
     change: (v)=> {
-      console.log(`value:${2013 + parseInt((v - 1) / 10)}`)
-      year = 2013 + parseInt((v - 1) / 10);
+      console.log(`year:${year}`)
     }
   })
 }
