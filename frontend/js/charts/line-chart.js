@@ -8,15 +8,16 @@ var app = {};
 var option;
 
 option = {
-  title: {
-    text: 'Total',
-    left: '2%',
-    textStyle: {
-      color: '#A9A9A9'
-    }
-  },
+  // title: {
+  //   text: 'Sum',
+  //   left: '2%',
+  //   textStyle: {
+  //     color: '#A9A9A9'
+  //   }
+  // },
   tooltip: {
-    trigger: 'axis'
+    trigger: 'axis',
+    //formatter:"{a1},{b1},{c2}"
   },
   // legend: {
   //   //data: ['当前', '世界'],
@@ -43,11 +44,15 @@ option = {
   },
   yAxis: {
     type: 'value',
+    name : '频次',
+    nameTextStyle:{
+        align:"right",
+    },
     axisLine:{
       lineStyle:{
           color: "#fff",
       },
-    },
+  },
   },
   series: [
     {
@@ -57,10 +62,10 @@ option = {
       emphasis: {
         focus: 'series'
       },
-      data: [0, 0, 1, 0, 1, 2, 1, 0, 0, 1, 0, 0],
+      data: [0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
       itemStyle: {
         normal: {
-        color:'rgba(30,144,255,0.9)'
+        color:'rgba(30,144,255,1)'
         },
       },
     },
@@ -71,10 +76,10 @@ option = {
       emphasis: {
         focus: 'series'
       },
-      data: [1, 1, 3, 5, 1,0, 1, 0, 0, 2, 0, 5],
+      data: [0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
       itemStyle: {
         normal: {
-        color:'rgba(30,144,255,0.8)'
+        color:'rgba(30,144,255,0.9)'
         },
       },
     },
@@ -85,7 +90,7 @@ option = {
       emphasis: {
         focus: 'series'
       },
-      data: [0, 2, 3, 0, 4, 0, 2, 8, 6, 8, 2, 5],
+      data: [2, 4, 2, 3, 4, 1, 1, 6, 7, 4, 3, 6],
       itemStyle: {
         normal: {
         color:'rgba(30,144,255,0.7)'
@@ -99,10 +104,10 @@ option = {
       emphasis: {
         focus: 'series'
       },
-      data: [2, 8, 11, 3, 2, 3, 10, 12, 3, 8, 9, 3],
+      data: [23, 42, 25, 21, 42, 15, 22, 31, 29, 39, 37, 24],
       itemStyle: {
         normal: {
-        color:'rgba(30,144,255,0.6)'
+        color:'rgba(30,144,255,0.5)'
         },
       },
     },
@@ -113,10 +118,10 @@ option = {
       emphasis: {
         focus: 'series'
       },
-      data: [12, 13, 6, 11, 6, 8, 8, 11, 5,6, 8, 8],
+      data: [12, 3, 12, 16, 8, 4, 7, 18, 4, 7, 7, 11],
       itemStyle: {
         normal: {
-        color:'rgba(30,144,255,0.4)'
+        color:'rgba(30,144,255,0.3)'
         },
       },
     },
