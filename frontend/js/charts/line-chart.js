@@ -51,63 +51,7 @@ option = {
   },
   series: [
     {
-      name: '弱震',
-      type: 'bar',
-      stack: 'Total',
-      emphasis: {
-        focus: 'series'
-      },
-      data: [12, 13, 5, 11, 6, 8, 18, 11, 15,16, 21, 18],
-      itemStyle: {
-        normal: {
-        color:'rgba(30,144,255,0.4)'
-        },
-      },
-    },
-    {
-      name: '有感地震',
-      type: 'bar',
-      stack: 'Total',
-      emphasis: {
-        focus: 'series'
-      },
-      data: [2, 18, 19, 3, 2, 3, 10, 12, 3, 8, 9, 3],
-      itemStyle: {
-        normal: {
-        color:'rgba(30,144,255,0.6)'
-        },
-      },
-    },
-    {
-      name: '中强震',
-      type: 'bar',
-      stack: 'Total',
-      emphasis: {
-        focus: 'series'
-      },
-      data: [0, 12, 13, 0, 11, 2, 2, 8, 6, 20, 0, 5],
-      itemStyle: {
-        normal: {
-        color:'rgba(30,144,255,0.8)'
-        },
-      },
-    },
-    {
-      name: '强震',
-      type: 'bar',
-      stack: 'Total',
-      emphasis: {
-        focus: 'series'
-      },
-      data: [1, 1, 13, 8, 1,0, 5, 8, 6, 20, 0, 5],
-      itemStyle: {
-        normal: {
-        color:'rgba(30,144,255,0.9)'
-        },
-      },
-    },
-    {
-      name: '大地震',
+      name: '大地震(M≥7)',
       type: 'bar',
       stack: 'Total',
       emphasis: {
@@ -116,10 +60,67 @@ option = {
       data: [0, 0, 1, 0, 1, 2, 1, 0, 0, 1, 0, 0],
       itemStyle: {
         normal: {
-        color:'rgba(30,144,255,1.0)'
+        color:'rgba(30,144,255,0.9)'
         },
       },
-    }
+    },
+    {
+      name: '强震(6≤M<7)',
+      type: 'bar',
+      stack: 'Total',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [1, 1, 3, 5, 1,0, 1, 0, 0, 2, 0, 5],
+      itemStyle: {
+        normal: {
+        color:'rgba(30,144,255,0.8)'
+        },
+      },
+    },
+    {
+      name: '中强震(4.5≤M<6)',
+      type: 'bar',
+      stack: 'Total',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [0, 2, 3, 0, 4, 0, 2, 8, 6, 8, 2, 5],
+      itemStyle: {
+        normal: {
+        color:'rgba(30,144,255,0.7)'
+        },
+      },
+    },
+    {
+      name: '有感地震(3≤M<4.5)',
+      type: 'bar',
+      stack: 'Total',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [2, 8, 11, 3, 2, 3, 10, 12, 3, 8, 9, 3],
+      itemStyle: {
+        normal: {
+        color:'rgba(30,144,255,0.6)'
+        },
+      },
+    },
+    {
+      name: '弱震(M<3)',
+      type: 'bar',
+      stack: 'Total',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [12, 13, 6, 11, 6, 8, 8, 11, 5,6, 8, 8],
+      itemStyle: {
+        normal: {
+        color:'rgba(30,144,255,0.4)'
+        },
+      },
+    },
+
   ]
 };
 
