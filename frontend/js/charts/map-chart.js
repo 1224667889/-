@@ -1,13 +1,14 @@
 var mapChart = echarts.init(document.getElementById('map-chart-container'));
 var geoItemStyle = {
   normal: {
-    areaColor: '#323c48',
+    areaColor: 'rgba(140,202,153,1)',
     borderColor: '#111'
   },
   emphasis: {
-    areaColor: '#2a333d'
+    areaColor: 'rgba(140,202,153,0.7)'
   }
 };
+var backgroundColor = 'rgba(80,175,229,0.0)';
 // 悬停展示框格式化配置
 var series = [
   {
@@ -46,7 +47,9 @@ var visualMap = [
     dimension: 2,
     inRange: {
       symbolSize: [1, 40],
-      color: ['#CC0033','#770022'],
+      color: ['#00CCFF', '#6600FF', '#FF0033']
+      // color: ['#FF3333','#CC0033', '#CC0033','#990033'],
+      // color: ['#22DD92']
     },
     textStyle: {
       color: '#fff'
@@ -86,13 +89,14 @@ function ChinaMap(equipData) {
       map: 'china',
       itemStyle: geoItemStyle
     },
+    backgroundColor: backgroundColor,
     tooltip: tooltip,
     // 设置散点
     series: series,
     visualMap: visualMap
   };
   option.series[0].data = equipData;
-  option.visualMap[1].inRange.symbolSize = [1, 40];
+  option.visualMap[1].inRange.symbolSize = [1, 25];
   mapChart.setOption(option);
 }
 function WorldMap(equipData) {
@@ -102,6 +106,7 @@ function WorldMap(equipData) {
       map: 'world',
       itemStyle: geoItemStyle
     },
+    backgroundColor: backgroundColor,
     tooltip: tooltip,
     // 设置散点
     series: series,

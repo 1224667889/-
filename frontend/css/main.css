@@ -2,6 +2,17 @@ body * {
     color: white;
     user-select: none;
 }
+.title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 5%;
+    margin: 0 auto;
+    text-align: center;
+    color: #32607a;
+    font-size: 40px;
+    letter-spacing: 8px;
+}
 .ground {
     /*背景设置*/
     background-color: #262626;
