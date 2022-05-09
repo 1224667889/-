@@ -130,6 +130,11 @@ function updateMinMaxLineChart() {
         containLabel: true
       },
       xAxis: {
+          name: '深度',
+          nameTextStyle:{
+            align:"right",
+            verticalAlign:"top",
+        },
           type: 'category',
           data: data.map(function (item) {
            return item.depth;
@@ -141,6 +146,10 @@ function updateMinMaxLineChart() {
           },
       },
       yAxis: {
+            name : '震级',
+            nameTextStyle:{
+                align:"right",
+            },
             axisLine:{
               lineStyle:{
                   color: "#fff",
