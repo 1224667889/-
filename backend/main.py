@@ -161,9 +161,9 @@ def get_line():
     # [[12] * 5]
     for month in range(1, 13):
         if month == 12:
-            next_month = datetime(year=year+1, month=1, day=1)
+            next_month = datetime(year=year + 1, month=1, day=1)
         else:
-            next_month = datetime(year=year, month=month+1, day=1)
+            next_month = datetime(year=year, month=month + 1, day=1)
 
         month_data = digits.filter(
             and_(
@@ -177,7 +177,7 @@ def get_line():
                 month_data.filter(
                     and_(
                         Digit.rank >= high_ranks[i],
-                        Digit.rank < high_ranks[i+1],
+                        Digit.rank < high_ranks[i + 1],
                     )
                 ).count()
             )
@@ -190,6 +190,39 @@ def get_line():
         "msg": "SUCCESS",
         "data": {
             "lines": line_list,
+        }
+    })
+
+
+@app.route('/api/scatter', methods=['GET'])
+def get_scatter():
+    year = request.args.get('year', type=int, default=2013)
+    rank = request.args.get('rank', type=float, default=0.)
+    country = request.args.get('country', type=str, default="")
+
+    digits = get_digits(year, rank, country)
+    # digits = digits.order_by(Digit.depth)
+    digits = digits.with_entities(
+        func.round(Digit.depth).label('round_depth'),
+        func.max(Digit.rank).label('max_rank'),
+        func.min(Digit.rank).label('min_rank'),
+        func.avg(Digit.rank).label('avg_rank'),
+    ).group_by('round_depth').order_by('round_depth')
+    digits = digits.all()
+    print(digits)
+    return json.dumps({
+        "code": 200,
+        "msg": "SUCCESS",
+        "data": {
+            "digits": [
+                {
+                    "depth": digit[0],
+                    "maxRank": digit[1],
+                    "minRank": digit[2],
+                    "value": digit[3]
+                }
+                for digit in digits
+            ]
         }
     })
 
