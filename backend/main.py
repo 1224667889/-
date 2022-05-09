@@ -10,7 +10,7 @@ from flask_cors import CORS
 from utils import word_cloud
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://%s:%s@%s/%s' % ('root', 'root', 'localhost:3306', 'visiable_base')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://%s:%s@%s/%s' % ('root', 'aaaaaa', 'localhost:3306', 'visiable_base')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 CORS(app, supports_credentials=True)
 pymysql.install_as_MySQLdb()

@@ -19,6 +19,7 @@ function UpdateWordCloud(year=2013, rank=0.0, country=""){
         }
     });
 }
+
 $(document).ready(function(){
     UpdateWordCloud(year, rank, country);
 });

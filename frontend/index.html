@@ -7,13 +7,13 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <link href="./css/position.css" rel="stylesheet" type="text/css">
     <link href="./css/contents.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/dataTool.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/bmap.min.js"></script>
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/dataTool.min.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/bmap.min.js"></script>-->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/echart/echarts.min.js"></script>
     <script type="text/javascript" src="js/echart/ecStat.min.js"></script>
@@ -36,10 +36,10 @@
             <div class="content" id="left-content">
                 <!-- 左视图 -->
                 <div class="view-chart" id="last-one">
-                    <!-- 上次地震记录 -->
+                    <!-- 最大地震记录 -->
                     <div class="inner">
                         <div class="tab">
-                            <a class="first">上次地震记录</a>
+                            <a class="first">最大地震记录</a>
                             <a id="last-one-date">日期：</a>
                         </div>
                         <div class="last-div">
@@ -174,7 +174,7 @@
                 <div class="view-chart" id="line-chart">
                     <!-- 折线图 -->
                     <div class="inner">
-                        <div class="line-chart-title">地震发生频率变化折线图</div>
+                        <div class="line-chart-title">地震类型发生频率柱形图</div>
                         <div id="line-chart-container">
                             
                         </div>
@@ -193,9 +193,6 @@
                         <div id="scatter-chart-container">
                             
                         </div>
-<!--                        <div id="pie-chart-container">-->
-
-<!--                        </div>-->
                     </div>
                 </div>
                 <div class="view-chart" id="range-selection">
@@ -241,12 +238,12 @@
     <script type="text/javascript" src="js/data/area-data.js"></script>
     <script type="text/javascript" src="js/data/auto-update.js"></script>
 
+    <script type="text/javascript" src="js/charts/map-chart.js"></script>
     <script type="text/javascript" src="js/charts/minmaxLine-chart.js"></script>
     <script type="text/javascript" src="js/charts/last-data.js"></script>
     <script type="text/javascript" src="js/charts/rank-page-data.js"></script>
-    <script type="text/javascript" src="js/charts/wordcloud.js"></script>
+    <script type="text/javascript" src="js/charts/word-cloud.js"></script>
     <script type="text/javascript" src="js/charts/line-chart.js"></script>
-    <script type="text/javascript" src="js/charts/pie-chart.js"></script>
-    <script type="text/javascript" src="js/charts/map-chart.js"></script>
+
 </body>
 </html>

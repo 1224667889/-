@@ -205,11 +205,13 @@
 #scatter-chart #scatter-chart-container {
     /*display: none;*/
     height: 100%;
+    left: 1%;
+    width: 92%;
 }
-/* 饼图 */
-#scatter-chart #pie-chart-container {
+#scatter-chart #scatter-chart-container * {
     /*display: none;*/
     height: 100%;
+    width: 100%;
 }
 
 /* 地图 */

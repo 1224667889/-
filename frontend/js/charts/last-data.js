@@ -21,6 +21,7 @@ function UpdateLastData(year=2013, rank=0.0, country="") {
         }
     });
 }
+
 $(document).ready(function(){
-    $("#last-one").ready(UpdateLastData(year, rank, country));
+    UpdateLastData(year, rank, country);
 });
