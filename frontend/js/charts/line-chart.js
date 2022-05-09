@@ -1,4 +1,5 @@
-function UpdateLineChart(year=2013, rank=0.0, country="") {
+function LineChart(LineData) {
+
   var dom = document.getElementById('line-chart-container');
   var myChart = echarts.init(dom, null, {
     renderer: 'canvas',
@@ -67,7 +68,7 @@ function UpdateLineChart(year=2013, rank=0.0, country="") {
         emphasis: {
           focus: 'series'
         },
-        data: [2, 4, 2, 3, 4, 1, 1, 6, 7, 4, 3, 6],
+        data: LineData[4],
         itemStyle: {
           normal: {
             color:'#001a63'
@@ -81,7 +82,7 @@ function UpdateLineChart(year=2013, rank=0.0, country="") {
         emphasis: {
           focus: 'series'
         },
-        data: [2, 4, 2, 3, 4, 1, 1, 6, 7, 4, 3, 6],
+        data: LineData[3],
         itemStyle: {
           normal: {
             color:'#00469c'
@@ -95,7 +96,7 @@ function UpdateLineChart(year=2013, rank=0.0, country="") {
         emphasis: {
           focus: 'series'
         },
-        data: [2, 4, 2, 3, 4, 1, 1, 6, 7, 4, 3, 6],
+        data: LineData[2],
         itemStyle: {
           normal: {
             color:'#005bb4'
@@ -109,7 +110,7 @@ function UpdateLineChart(year=2013, rank=0.0, country="") {
         emphasis: {
           focus: 'series'
         },
-        data: [23, 42, 25, 21, 42, 15, 22, 31, 29, 39, 37, 24],
+        data: LineData[1],
         itemStyle: {
           normal: {
             color:'#0073cf'
@@ -123,7 +124,7 @@ function UpdateLineChart(year=2013, rank=0.0, country="") {
         emphasis: {
           focus: 'series'
         },
-        data: [12, 3, 12, 16, 8, 4, 7, 18, 4, 7, 7, 11],
+        data: LineData[0],
         itemStyle: {
           normal: {
             color:'#4592f2'
@@ -137,8 +138,20 @@ function UpdateLineChart(year=2013, rank=0.0, country="") {
   if (option && typeof option === 'object') {
     myChart.setOption(option);
   }
-
   window.addEventListener('resize', myChart.resize);
+}
+function UpdateLineChart(year=2013, rank=0.0, country="") {
+  $.ajax({
+    url:'http://127.0.0.1:5000/api/line?year='+year+'&rank='+rank+'&country='+country,
+    type:'get',
+    dataType:'json',
+    success: function(data){
+      LineChart(data.data.lines)
+    },
+    error:function(){
+      console.log('请求出错！');
+    }
+  });
 }
 
 $(document).ready(function(){

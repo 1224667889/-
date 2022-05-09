@@ -60,7 +60,7 @@ var tooltip = {
     if (name.length >= 18) {
       name = name.substring(0, 15) + "..."
     }
-    return `地点:${name}</br>经纬度：${params.value[0]}°, ${params.value[1]}°</br>震源深度：${params.data.depth}km</br>震级：${params.value[2]}`
+    return `时间：${params.data.time}</br>地点:${name}</br>经纬度：${params.value[0]}°, ${params.value[1]}°</br>震源深度：${params.data.depth}km</br>震级：${params.value[2]}`
   }
 };
 

@@ -67,7 +67,8 @@ class Digit(db.Model):
                     self.latitude,
                     self.rank,
                     int(self.time.strftime("%j"))
-                ]
+                ],
+                "time": self.time.strftime('%Y-%m-%d %H:%M:%S'),
             }
         except Exception as e:
             logging.error(e)
@@ -101,7 +102,7 @@ def get_last():
     country = request.args.get('country', type=str, default="")
 
     digits = get_digits(year, rank, country)
-    last = digits.order_by(Digit.time.desc()).first()
+    last = digits.order_by(Digit.rank.desc()).first()
     if not last:
         last = Digit()
     return json.dumps({
@@ -145,6 +146,50 @@ def get_map():
         "data": {
             "digits": [digit.to_map() for digit in digits],
             "sum": len(digits)
+        }
+    })
+
+
+@app.route('/api/line', methods=['GET'])
+def get_line():
+    year = request.args.get('year', type=int, default=2013)
+    rank = request.args.get('rank', type=float, default=0.)
+    country = request.args.get('country', type=str, default="")
+
+    digits = get_digits(year, rank, country)
+    line_list = [[], [], [], [], []]
+    # [[12] * 5]
+    for month in range(1, 13):
+        if month == 12:
+            next_month = datetime(year=year+1, month=1, day=1)
+        else:
+            next_month = datetime(year=year, month=month+1, day=1)
+
+        month_data = digits.filter(
+            and_(
+                Digit.time > datetime(year=year, month=month, day=1),
+                Digit.time < next_month
+            )
+        )
+        high_ranks = [0., 3., 4.5, 6., 7., 10.]
+        for i in range(5):
+            line_list[i].append(
+                month_data.filter(
+                    and_(
+                        Digit.rank >= high_ranks[i],
+                        Digit.rank < high_ranks[i+1],
+                    )
+                ).count()
+            )
+        # for i, high_rank in enumerate(high_ranks):
+        #     line_list[i].append(
+        #         month_data.filter(Digit.rank < high_rank).count()
+        #     )
+    return json.dumps({
+        "code": 200,
+        "msg": "SUCCESS",
+        "data": {
+            "lines": line_list,
         }
     })
 
