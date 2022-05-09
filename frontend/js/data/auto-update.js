@@ -14,7 +14,8 @@ function UpdateAllData() {
     UpdateWordCloud(year, rank, country);
     // 更新柱形图数据
     UpdateLineChart(year, rank, country);
-    // Todo: 更多数据
+    // 更新“散点图”数据
+    UpdateMinMaxLineChart(year, rank, country);
 }
 
 function AutoUpdate(dif=false) {
